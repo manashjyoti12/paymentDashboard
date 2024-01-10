@@ -2,6 +2,9 @@ import Sidebar from "./Sidebar";
 import "./style.scss";
 import "@fontsource/roboto";
 import { FaSearch } from "react-icons/fa";
+import { FaRegQuestionCircle } from "react-icons/fa";
+import { RiMessage2Fill } from "react-icons/ri";
+import { TbTriangleInvertedFilled } from "react-icons/tb";
 
 const Navbar = () => {
   return (
@@ -11,8 +14,11 @@ const Navbar = () => {
       <div className="wrapper">
         <div className="brand">
           <h1>Payouts</h1>
-          <p></p>
+          <p>
+            <FaRegQuestionCircle /> How it works
+          </p>
         </div>
+
         <div className="inputDiv">
           <FaSearch className="logo" />
           <input
@@ -20,8 +26,15 @@ const Navbar = () => {
             className="input"
           />
         </div>
-        <div>
-          <h1>icons</h1>
+
+        <div className="icons">
+          <div className="mesg">
+            <RiMessage2Fill className="logo1" />
+          </div>
+
+          <div className="mesg1">
+            <TbTriangleInvertedFilled className="logo2" />
+          </div>
         </div>
       </div>
     </div>
