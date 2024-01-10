@@ -1,4 +1,3 @@
-import Sidebar from "./Sidebar";
 import "./style.scss";
 import "@fontsource/roboto";
 import { FaSearch } from "react-icons/fa";
@@ -9,8 +8,6 @@ import { TbTriangleInvertedFilled } from "react-icons/tb";
 const Navbar = () => {
   return (
     <div className="navbarComponent">
-      <Sidebar />
-
       <div className="wrapper">
         <div className="brand">
           <h1>Payouts</h1>

@@ -1,8 +1,14 @@
 .navbarComponent{
     background-color: #FFFFFF;
     border-bottom: 2px solid #e8e8e8;
+    // display: flex;
+    // width: 100%;
+
     
     .wrapper{
+        // background-color: yellow;
+        padding: 1%;
+        // flex: 1;
         max-width: 1366px;
         margin: auto;
         display: flex;
@@ -13,10 +19,13 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            font-size: small;
+            font-size: medium;
             letter-spacing: 2px;
 
             p{
+                display: flex;
+                align-items: center;
+                gap: 4px;
                 letter-spacing: 0px;
                 font-size: medium;
                 color: #ABABAB;
@@ -90,17 +99,60 @@
     }
 }
 
+
+// .navbarComponent{
+//     background-color: yellow;
+//     width: 100%;
+// }
+
 // SIDEBAR  SECTION
 
 .sidebarComponent{
+    // width: 300px;
+    // height: 100vh;
+    padding: 1%;
     background-color: #1E2640;
-    color:#A9ACB7 ;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+    color:#CED0D5 ;
+    font-size: small;
 
-    .bg{
-        width: 400px;
+    .head{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .brand{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .img{
+                width: 50px;
+                height: 50px;
+                border-radius: 5px;
+            }
+
+            .storeName{
+                font-weight: 800;
+            }
+
+            .storeLink{
+                font-size: smaller;
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+
+
+        .arrow{
+             font-size: 30px;
+            cursor: pointer;
+        }
     }
+}
+
+
+// HOME COMPONENT
+.home{
+    display: flex;
+   
 }
