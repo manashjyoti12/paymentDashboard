@@ -1,0 +1,61 @@
+.navbarComponent{
+    background-color: #FFFFFF;
+    border-bottom: 2px solid #e8e8e8;
+    
+    .wrapper{
+        max-width: 1366px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .brand{
+            font-size: small;
+            letter-spacing: 2px;
+            
+        }
+
+        .inputDiv{
+            // background-color: red;
+            width: 30%;  
+            display: flex;
+            align-items: center;
+            background-color: #F2F2F2;
+            color: #A8A8A8;
+            border-radius: 5px;
+            padding: 1%;
+            gap: 6px;
+
+            .logo{
+                cursor: pointer;
+            }
+        }
+
+        .input{
+            border-radius: 5px;
+            background-color: #F2F2F2;
+            color: #A8A8A8;
+            // padding: 2%;
+            outline: none;
+            border: none;
+            width: 100%;
+            
+        }
+
+    }
+}
+
+// SIDEBAR  SECTION
+
+.sidebarComponent{
+    background-color: #1E2640;
+    color:#A9ACB7 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .bg{
+        width: 400px;
+    }
+}
