@@ -2,11 +2,22 @@ import { IoChevronDownSharp } from "react-icons/io5";
 import { FaSearch } from "react-icons/fa";
 import { TbArrowsSort } from "react-icons/tb";
 import { MdOutlineFileDownload } from "react-icons/md";
-import { Next, Pending, Processed, Refunds } from "../../utils/data";
+import {
+  Next,
+  Order,
+  Payout,
+  Pending,
+  Processed,
+  Recieved,
+  Refunds,
+} from "../../utils/data";
 import Cart from "./Cart";
 import Table from "./Table";
+import { useState } from "react";
 
 const PayoutBody = () => {
+  const [refund, setRefund] = useState(true);
+
   return (
     <div className="max-w-[1366px] m-auto p-4 bg-[#FAFAFA]">
       {/* HEADER SECTION */}
@@ -20,7 +31,7 @@ const PayoutBody = () => {
       </div>
 
       {/* CARD SECTION */}
-      <div className="flex justify-between mt-10">
+      <div className={`flex justify-between mt-10 ${!refund && "hidden"}`}>
         <div>
           {Next?.map((prop) => (
             <>
@@ -44,6 +55,23 @@ const PayoutBody = () => {
         </div>
       </div>
 
+      <div className={`flex justify-between mt-10 ${refund && "hidden"}`}>
+        <div>
+          {Order?.map((prop) => (
+            <>
+              <Cart data={prop} />
+            </>
+          ))}
+        </div>
+        <div>
+          {Recieved?.map((prop) => (
+            <>
+              <Cart data={prop} />
+            </>
+          ))}
+        </div>
+      </div>
+
       {/* Transaction Section */}
       <div className="mt-10 pb-6">
         <h1 className="font-bold text-xl tracking-wider text-[#4A494D]">
@@ -51,10 +79,25 @@ const PayoutBody = () => {
         </h1>
 
         <div className="flex gap-8 mt-4">
-          <div className="bg-[#E6E6E6] text-[#989898] p-2 rounded-full px-6 cursor-pointer">
+          <div
+            onClick={() => {
+              setRefund(false);
+            }}
+            className={` p-2 rounded-full px-6 cursor-pointer ${
+              !refund && "bg-[#146EB4] text-[#C6DBED]"
+            } ${refund && "bg-[#E6E6E6] text-[#8a8a8a] "}`}
+          >
             Payouts (22)
           </div>
-          <div className="bg-[#146EB4] text-[#C6DBED] p-2 rounded-full px-6 cursor-pointer">
+
+          <div
+            onClick={() => {
+              setRefund(true);
+            }}
+            className={` p-2 rounded-full px-6 cursor-pointer ${
+              !refund && "bg-[#E6E6E6] text-[#8a8a8a] "
+            } ${refund && "bg-[#146EB4] text-[#C6DBED]"}`}
+          >
             Refunds (6)
           </div>
         </div>
@@ -78,11 +121,22 @@ const PayoutBody = () => {
           </div>
         </div>
 
-        {Refunds.map((prop) => (
-          <>
-            <Table data={prop} />
-          </>
-        ))}
+        {/*TABLE SECTION */}
+        <div className={`${!refund && "hidden"}`}>
+          {Refunds.map((prop) => (
+            <>
+              <Table data={prop} />
+            </>
+          ))}
+        </div>
+
+        <div className={`${refund && "hidden"}`}>
+          {Payout.map((prop) => (
+            <>
+              <Table data={prop} />
+            </>
+          ))}
+        </div>
       </div>
     </div>
   );

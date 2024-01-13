@@ -25,12 +25,31 @@ export const Processed = [
   },
 ];
 
+export const Order = [
+  {
+    title: "Online orders",
+    amount: "231",
+    active: false,
+    Payout: true,
+    num: true,
+  },
+];
+
+export const Recieved = [
+  {
+    title: "Amount received",
+    amount: "23,92,312.19",
+    active: false,
+    Payout: true,
+  },
+];
+
 export const Refunds = [
   {
     orderId: "Order ID",
     status: "Status",
     transactionId: "Transaction ID",
-    refundDate: "Refund date",
+    date: "Refund date",
     orderAmount: "Order amount",
     active: true,
   },
@@ -38,50 +57,124 @@ export const Refunds = [
     orderId: "#281209",
     status: "Successful",
     transactionId: "131634495747",
-    refundDate: "Today, 08:45 PM",
+    date: "Today, 08:45 PM",
     orderAmount: 1125.0,
   },
   {
     orderId: "#281208",
     status: "Processing",
     transactionId: "131634495747",
-    refundDate: "Yesterday, 3:00 PM",
+    date: "Yesterday, 3:00 PM",
     orderAmount: 1125.0,
   },
   {
     orderId: "#281207",
     status: "Successful",
     transactionId: "131634495747",
-    refundDate: "12 Jul 2023, 03:00 PM",
+    date: "12 Jul 2023, 03:00 PM",
     orderAmount: 1125.0,
   },
   {
     orderId: "#281206",
     status: "Successful",
     transactionId: "131634495747",
-    refundDate: "12 Jul 2023, 03:00 PM",
+    date: "12 Jul 2023, 03:00 PM",
     orderAmount: 1125.0,
   },
   {
     orderId: "#281205",
     status: "Successful",
     transactionId: "131634495747",
-    refundDate: "12 Jul 2023, 03:00 PM",
+    date: "12 Jul 2023, 03:00 PM",
     orderAmount: 1125.0,
   },
   {
     orderId: "#281204",
     status: "Successful",
     transactionId: "131634495747",
-    refundDate: "12 Jul 2023, 03:00 PM",
+    date: "12 Jul 2023, 03:00 PM",
     orderAmount: 1125.0,
   },
 ];
 
-//   <div className=" flex justify-between bg-[#F2F2F2] text-[#7B7B7B] font-semibold p-3 rounded-md">
-//         <div>Order ID</div>
-//         <div>Status</div>
-//         <div>Transaction ID</div>
-//         <div>Refund date</div>
-//         <div>Order amount </div>
-//       </div>
+export const Payout = [
+  {
+    orderId: "Order ID",
+    date: "Order date",
+    orderAmount: "Order amount",
+    transactionFees: "Transaction fees",
+    active: true,
+  },
+  {
+    orderId: "#201205",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 0,
+  },
+  {
+    orderId: "#281200",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 722,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+  {
+    orderId: "#201205",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 0,
+  },
+  {
+    orderId: "#281200",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 722,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+  {
+    orderId: "#201205",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 0,
+  },
+  {
+    orderId: "#281200",
+    date: "7 July, 2023",
+    orderAmount: 1278.23,
+    transactionFees: 722,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+  {
+    orderId: "#281209",
+    date: "7 July, 2023",
+    orderAmount: 127823,
+    transactionFees: 22,
+  },
+];

@@ -16,16 +16,20 @@ const Cart = (prop) => {
           data.active ? " text-[#eeeeee]" : "text-[#777777]"
         }`}
       >
-        {data.title} <GoQuestion />
+        {data.title} <GoQuestion className={`${data.Payout && "hidden"}`} />
       </div>
 
-      <div className="flex justify-between items-center w-96">
+      <div
+        className={`flex justify-between items-center w-96 ${
+          data.Payout && "w-[65vh]"
+        }  `}
+      >
         <div
           className={`text-3xl font-semibold ${
             data.active ? "text-[#FFFFFF]" : "text-[#27252A]"
           }`}
         >
-          ₹ {data.amount}
+          <span className={`${data.num && "hidden"}`}>₹</span> {data.amount}
         </div>
 
         <div
