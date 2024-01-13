@@ -1,11 +1,11 @@
-import "./style.scss";
+import "../style.scss";
 import "@fontsource/roboto";
 import { FaSearch } from "react-icons/fa";
 import { FaRegQuestionCircle } from "react-icons/fa";
 import { RiMessage2Fill } from "react-icons/ri";
 import { TbTriangleInvertedFilled } from "react-icons/tb";
 
-const Navbar = () => {
+const NavbarHome = () => {
   return (
     <div className="navbarComponent sticky top-0 z-10">
       <div className="wrapper">
@@ -38,4 +38,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarHome;

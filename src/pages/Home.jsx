@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { GoHome } from "react-icons/go";
 import { LuClipboardList } from "react-icons/lu";
@@ -12,7 +11,9 @@ import { CiDiscount1 } from "react-icons/ci";
 import { TbUsers } from "react-icons/tb";
 import { IoColorPaletteOutline } from "react-icons/io5";
 import { AiOutlineThunderbolt } from "react-icons/ai";
-import HomeBody from "../components/HomeBody";
+import HomeBody from "../components/Home/HomeBody";
+import NavbarHome from "../components/Home/NavbarHome";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const [open, setOpen] = useState(true);
@@ -24,7 +25,7 @@ const Home = () => {
     { name: "Delivery", link: "/", icon: BsTruck },
     { name: "Marketing", link: "/", icon: PiConfettiBold },
     { name: "Analytics", link: "/", icon: SiSimpleanalytics },
-    { name: "Payout", link: "/", icon: FaMoneyBills },
+    { name: "Payout", link: "/payout", icon: FaMoneyBills },
     { name: "Discounts", link: "/", icon: CiDiscount1 },
     { name: "Marketing", link: "/", icon: PiConfettiBold },
     { name: "Audiances", link: "/", icon: TbUsers },
@@ -71,35 +72,37 @@ const Home = () => {
         {/* SIDEBAR BODY SECTION */}
         {menus?.map((menu) => (
           <>
-            <div className="BODY pl-1 mt-4 flex justify-center ">
-              <div
-                className={`flex items-center gap-3 w-full cursor-pointer p-2 rounded-lg  ${
-                  menu.active ? "bg-[#343C53] " : "bg-[#1E2640]"
-                }`}
-              >
+            <Link to={menu?.link}>
+              <div className="BODY pl-1 mt-4 flex justify-center ">
                 <div
-                  className={
-                    menu.active ? "text-[#FEFEFE] " : "text-[#CED0D5] "
-                  }
+                  className={`flex items-center gap-3 w-full cursor-pointer p-2 rounded-lg  hover:bg-[#343C53] hover:text-[#FEFEFE]   ${
+                    menu.active ? "bg-[#343C53] " : "bg-[#1E2640]"
+                  }`}
                 >
-                  {React.createElement(menu?.icon, { size: "30" })}
+                  <div
+                    className={
+                      menu.active ? "text-[#FEFEFE] " : "text-[#CED0D5] "
+                    }
+                  >
+                    {React.createElement(menu?.icon, { size: "30" })}
+                  </div>
+                  <span
+                    className={`transition ease-in-out duration-300 ${
+                      !open && "hidden"
+                    } ${menu.active ? "text-[#FEFEFE] " : "text-[#CED0D5] "}`}
+                  >
+                    {menu.name}
+                  </span>
                 </div>
-                <span
-                  className={`transition ease-in-out duration-300 ${
-                    !open && "hidden"
-                  } ${menu.active ? "text-[#FEFEFE] " : "text-[#CED0D5] "}`}
-                >
-                  {menu.name}
-                </span>
               </div>
-            </div>
+            </Link>
           </>
         ))}
       </div>
 
       {/* NAVBAR*/}
       <div className="navbar w-full overflow-y-auto h-screen">
-        <Navbar />
+        <NavbarHome />
         <HomeBody />
       </div>
     </div>
