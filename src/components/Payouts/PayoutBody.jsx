@@ -45,7 +45,7 @@ const PayoutBody = () => {
       </div>
 
       {/* Transaction Section */}
-      <div className="mt-10">
+      <div className="mt-10 pb-6">
         <h1 className="font-bold text-xl tracking-wider text-[#4A494D]">
           Transactions | This Month
         </h1>
@@ -69,10 +69,10 @@ const PayoutBody = () => {
           </div>
 
           <div className="flex gap-4 text-[#9CA3AF] font-semibold">
-            <div className="border-2 p-2  rounded-md px-4 flex items-center gap-2">
+            <div className="border-2 p-2 cursor-pointer rounded-md px-4 flex items-center gap-2">
               Sort <TbArrowsSort />
             </div>
-            <div className="border-2 p-2 text-xl rounded-md px-4 ">
+            <div className="border-2 cursor-pointer p-2 text-xl rounded-md px-4 ">
               <MdOutlineFileDownload />
             </div>
           </div>

@@ -32,6 +32,7 @@ export const Refunds = [
     transactionId: "Transaction ID",
     refundDate: "Refund date",
     orderAmount: "Order amount",
+    active: true,
   },
   {
     orderId: "#281209",
