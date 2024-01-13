@@ -5,6 +5,14 @@ import { GoHome } from "react-icons/go";
 import { LuClipboardList } from "react-icons/lu";
 import { HiOutlineSquares2X2 } from "react-icons/hi2";
 import { BsTruck } from "react-icons/bs";
+import { PiConfettiBold } from "react-icons/pi";
+import { SiSimpleanalytics } from "react-icons/si";
+import { FaMoneyBills } from "react-icons/fa6";
+import { CiDiscount1 } from "react-icons/ci";
+import { TbUsers } from "react-icons/tb";
+import { IoColorPaletteOutline } from "react-icons/io5";
+import { AiOutlineThunderbolt } from "react-icons/ai";
+import HomeBody from "../components/HomeBody";
 
 const Home = () => {
   const [open, setOpen] = useState(true);
@@ -14,18 +22,26 @@ const Home = () => {
     { name: "Orders", link: "/", icon: LuClipboardList },
     { name: "Products", link: "/", icon: HiOutlineSquares2X2 },
     { name: "Delivery", link: "/", icon: BsTruck },
+    { name: "Marketing", link: "/", icon: PiConfettiBold },
+    { name: "Analytics", link: "/", icon: SiSimpleanalytics },
+    { name: "Payout", link: "/", icon: FaMoneyBills },
+    { name: "Discounts", link: "/", icon: CiDiscount1 },
+    { name: "Marketing", link: "/", icon: PiConfettiBold },
+    { name: "Audiances", link: "/", icon: TbUsers },
+    { name: "Appearence", link: "/", icon: IoColorPaletteOutline },
+    { name: "Plugins", link: "/", icon: AiOutlineThunderbolt },
   ];
 
   return (
     <div className="home">
       {/* SIDEBAR */}
       <div
-        className={`sidebar h-screen bg-[#1E2640] text-[#CED0D5] p-4 ${
+        className={`sidebar h-screen bg-[#1E2640] text-[#CED0D5] z-50 p-4 ${
           open ? "w-60" : "w-24"
         } duration-300 relative`}
       >
         <IoIosArrowBack
-          className={`arrow bg-white rounded-full p-1 absolute text-3xl  border-2 border-[#CED0D5]  -right-3 top-6 ${
+          className={`arrow bg-white rounded-full p-1 absolute text-3xl cursor-pointer border-2 border-[#CED0D5]  -right-3 top-6 ${
             !open && "rotate-180"
           }`}
           onClick={() => {
@@ -55,9 +71,9 @@ const Home = () => {
         {/* SIDEBAR BODY SECTION */}
         {menus?.map((menu) => (
           <>
-            <div className="BODY pl-3  mt-4 flex justify-center">
+            <div className="BODY pl-1 mt-4 flex justify-center ">
               <div
-                className={`flex items-center gap-3 w-full cursor-pointer p-2 rounded-lg ${
+                className={`flex items-center gap-3 w-full cursor-pointer p-2 rounded-lg  ${
                   menu.active ? "bg-[#343C53] " : "bg-[#1E2640]"
                 }`}
               >
@@ -82,8 +98,9 @@ const Home = () => {
       </div>
 
       {/* NAVBAR*/}
-      <div className="navbar w-full">
+      <div className="navbar w-full overflow-y-auto h-screen">
         <Navbar />
+        <HomeBody />
       </div>
     </div>
   );

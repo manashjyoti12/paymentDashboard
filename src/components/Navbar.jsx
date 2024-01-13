@@ -7,10 +7,10 @@ import { TbTriangleInvertedFilled } from "react-icons/tb";
 
 const Navbar = () => {
   return (
-    <div className="navbarComponent">
+    <div className="navbarComponent sticky top-0 z-10">
       <div className="wrapper">
         <div className="brand">
-          <h1>Payouts</h1>
+          <h1>Home</h1>
           <p>
             <FaRegQuestionCircle /> How it works
           </p>
