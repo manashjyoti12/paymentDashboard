@@ -87,7 +87,7 @@ const PayoutBody = () => {
               !refund && "bg-[#146EB4] text-[#C6DBED]"
             } ${refund && "bg-[#E6E6E6] text-[#8a8a8a] "}`}
           >
-            Payouts (22)
+            Payouts (12)
           </div>
 
           <div

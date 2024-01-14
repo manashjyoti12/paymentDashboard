@@ -3,6 +3,22 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const Cart = (prop) => {
   const data = prop.data;
+  const currentDate = new Date();
+  let currentHours = currentDate.getHours();
+  const currentMinutes = currentDate.getMinutes().toString().padStart(2, "0");
+  let amPm = "AM";
+
+  // Convert to 12-hour format
+  if (currentHours > 12) {
+    currentHours -= 12;
+    amPm = "PM";
+  }
+
+  // Handle midnight (12:00 AM)
+  if (currentHours === 0) {
+    currentHours = 12;
+  }
+  const currentTime = `${currentHours}:${currentMinutes} ${amPm}`;
   return (
     <div
       className={` p-5 rounded-lg ${
@@ -55,7 +71,7 @@ const Cart = (prop) => {
         } `}
       >
         <span>Next Payout date:</span>
-        {data.dueDate}
+        {data.dueDate} {currentTime}
       </div>
     </div>
   );

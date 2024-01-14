@@ -3,7 +3,7 @@ export const Next = [
     title: "Next Payout",
     amount: "2,312.23",
     orders: 23,
-    dueDate: "Today, 4:00PM",
+    dueDate: "Today,",
     active: true,
   },
 ];
